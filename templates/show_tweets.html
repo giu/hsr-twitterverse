@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+        "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta name="description" content="HSR Twitterverse" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+  <link rel="alternate" type="application/rss+xml" title="HSR Twitterverse feed" href="http://pipes.yahoo.com/pipes/pipe.run?_id=zCBrTxw03hG8mv1uPm7D0g&_render=rss" />
+  <title>HSR Twitterverse</title>
+  <link rel="SHORTCUT ICON" href="/static/images/favicon.ico" />
+  <link rel="stylesheet" href="/static/css/style.css" media="screen" />
+</head>
+<body>
+<div class="container">
+  <div>
+    <a href="/"><img src="/static/images/logo.png" alt="HSR Twitterverse" /></a>
+  </div>
+  <div class="info">
+    <span>
+      <strong>Information:</strong>
+    </span>
+    <span>
+      The HSR Twitterverse (HT) aggregates the Twitter feeds of students and alumni of the <a href="http://www.hsr.ch">University of Applied Sciences in Rapperswil</a> (HSR).</span><span class="highlighted">If you are a student or alumn of the HSR and you want to join the HSR Twitterverse, do not hesitate to <a href="http://localhost/contact.html">contact Giu</a></span><span>. <a href="#" onclick="javascript:showMore()" id="show-more"><strong>More</strong> &raquo;</a>
+    </span>
+    <span id="more-text">
+      <br/><strong>More information:</strong>
+      <ul>
+        <li>Author: Giu (<a href="http://giu.me">http://giu.me</a>)</li>
+        <li>Idea: Corsin (<a href="http://cocaman.ch">http://cocaman.ch</a>)</li>
+        <li>Code: <a href="https://github.com/giu/hsr-twitterverse">https://github.com/giu/hsr-twitterverse</a></li>
+        <li>Powered by:<br/><a href="http://flask.pocoo.org">Flask</a> (A Python Microframework), <a href="http://feedparser.org">Universal Feed Parser</a> and <a href="http://pipes.yahoo.com/pipes/pipe.info?_id=zCBrTxw03hG8mv1uPm7D0g">Yahoo! Pipes</a></li>
+        <li>Header Background:<br/><a href="http://www.flickr.com/photos/cocaman/3870081763/">Hochschule Rapperswil, Campus</a> by Corsin (<a href="http://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA</a>)
+      </ul>
+
+      <a href="#" onclick="javascrip:hideMore()" id="hide-more">&laquo; <strong>Close</strong></a>
+    </span>
+  </div>
+  <div class="participants info">
+    <span>
+      <strong>HSR Participants:</strong>
+    </span>
+    <ul class="inline-list">
+    {% for participant in participants %}
+      <li>
+        <a href="https://twitter.com/{{ participant }}">{{ participant }}</a>
+      </li>
+    {% endfor %}
+    <ul>
+  </div>
+
+  {% for user,tweet,link,date in tweets %}
+    <div class="tweet">
+      <div class="user"><strong><a href="https://twitter.com/{{ user }}">{{ user }}</a></strong></div>
+      <div class="tweet-text">{{ tweet|safe }} <span class="date"><a href="{{ link }}">{{ date }}</a></span></div>
+      
+    </div>
+  {% endfor %}
+<div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-60338-13']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  function show(elemId){
+    document.getElementById(elemId).style.display='inline';
+  }
+
+  function hide(elemId){
+    document.getElementById(elemId).style.display='none';
+  }
+
+  function showMore(){
+    show('more-text');
+    hide('show-more');
+  }
+
+  function hideMore(){
+    hide('more-text');
+    show('show-more')
+  }
+</script>
+</body>
+</html>

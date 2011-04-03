@@ -1,0 +1,25 @@
+body{font-family:Arial, Sans-Serif;color:#000;line-height:1.5;font-size:15px;}
+a, a:hover, a:visited, a:focus{color:blue;text-decoration:none;}
+a img{border:none !important;}
+ul{margin:0;}
+
+.container{width:500px;margin:0 auto;}
+	.container > div{margin:15px 0;}
+
+.info{border:1px solid #ccc;padding:10px;color:#6c6c6c;line-height:1.7;}
+.info a{color:#577CFE;}
+
+.tweet{background:#D6F9FC;padding:10px;}
+	.tweet div{margin:3px 0;}
+	.user{font-weight:bold;font-size:15px;}
+		.user a{color:#000;}
+	.date, .date a{font-size:13px;color:#999999;}
+
+ul.inline-list{display:inline;margin:0;padding:0;list-style-type:none;}
+	ul.inline-list li{display:inline;margin:0 4px;}
+
+.highlighted{background:#FFFFCC;padding:2px;margin:0 3px;}
+
+#more-text{display:none;}
+
+.tweet:hover{background:#E2F9FB;}
